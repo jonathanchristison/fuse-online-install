@@ -263,8 +263,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
       type: Rolling
     template:
       metadata:
@@ -298,8 +300,10 @@ objects:
           resources:
             limits:
               memory: 255Mi
+              cpu: "1"
             requests:
               memory: 50Mi
+              cpu: "750m"
         volumes:
         - configMap:
             name: syndesis-ui-config
@@ -601,8 +605,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
     template:
       metadata:
         labels:
@@ -651,8 +657,10 @@ objects:
           resources:
             limits:
               memory: ${POSTGRESQL_MEMORY_LIMIT}
+              cpu: "1"
             requests:
               memory: ${POSTGRESQL_MEMORY_LIMIT}
+              cpu: "750m"
           volumeMounts:
           - mountPath: /var/lib/pgsql/data
             name: syndesis-db-data
@@ -734,8 +742,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
       type: Recreate
     template:
       metadata:
@@ -785,8 +795,10 @@ objects:
           resources:
             limits:
               memory: ${META_MEMORY_LIMIT}
+              cpu: "1"
             requests:
               memory: 280Mi
+              cpu: "750m"
           # spring-boot automatically picks up application.yml from ./config
           workingDir: /deployments
           volumeMounts:
@@ -896,8 +908,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
       type: Recreate
     template:
       metadata:
@@ -964,8 +978,10 @@ objects:
           resources:
             limits:
               memory: 200Mi
+              cpu: "1"
             requests:
               memory: 20Mi
+              cpu: "750m"
         serviceAccountName: syndesis-oauth-client
         volumes:
         - name: syndesis-oauthproxy-tls
@@ -1038,8 +1054,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
       type: Recreate
     template:
       metadata:
@@ -1316,8 +1334,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
       type: Recreate
     template:
       metadata:
@@ -1345,8 +1365,10 @@ objects:
             resources:
               limits:
                 memory: 256Mi
+                cpu: "1"
               requests:
                 memory: 256Mi
+                cpu: "750m"
             ports:
               - containerPort: 8080
                 name: http
@@ -1549,8 +1571,10 @@ objects:
       resources:
         limits:
           memory: "256Mi"
+          cpu: "1"
         requests:
           memory: "20Mi"
+          cpu: "750m"
     template:
       metadata:
         labels:
@@ -1583,8 +1607,10 @@ objects:
           resources:
             limits:
               memory: ${PROMETHEUS_MEMORY_LIMIT}
+              cpu: "1"
             requests:
               memory: ${PROMETHEUS_MEMORY_LIMIT}
+              cpu: "750m"
           volumeMounts:
           - name: syndesis-prometheus-data
             mountPath: /prometheus
