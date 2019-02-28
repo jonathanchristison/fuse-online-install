@@ -605,10 +605,8 @@ objects:
       resources:
         limits:
           cpu: 750m
-          memory: "256Mi"
         requests:
           cpu: 450m
-          memory: "20Mi"
     template:
       metadata:
         labels:
@@ -742,10 +740,8 @@ objects:
       resources:
         limits:
           cpu: 750m
-          memory: "256Mi"
         requests:
           cpu: 450m
-          memory: "20Mi"
       type: Recreate
     template:
       metadata:
@@ -908,10 +904,8 @@ objects:
       resources:
         limits:
           cpu: 750m
-          memory: "256Mi"
         requests:
           cpu: 450m
-          memory: "20Mi"
       type: Recreate
     template:
       metadata:
