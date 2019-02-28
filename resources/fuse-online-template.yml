@@ -262,8 +262,10 @@ objects:
         updatePeriodSeconds: 1
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
       type: Rolling
     template:
@@ -297,8 +299,10 @@ objects:
           # Set to burstable with a low memory footprint to start (50 Mi)
           resources:
             limits:
+              cpu: 750m
               memory: 255Mi
             requests:
+              cpu: 450m
               memory: 50Mi
         volumes:
         - configMap:
@@ -600,8 +604,10 @@ objects:
       type: Recreate
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
     template:
       metadata:
@@ -650,8 +656,10 @@ objects:
           # Note: On OSO there is no Guaranteed class, its always burstable
           resources:
             limits:
+              cpu: 750m
               memory: ${POSTGRESQL_MEMORY_LIMIT}
             requests:
+              cpu: 450m
               memory: ${POSTGRESQL_MEMORY_LIMIT}
           volumeMounts:
           - mountPath: /var/lib/pgsql/data
@@ -733,8 +741,10 @@ objects:
     strategy:
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
       type: Recreate
     template:
@@ -784,8 +794,10 @@ objects:
             protocol: TCP
           resources:
             limits:
+              cpu: 750m
               memory: ${META_MEMORY_LIMIT}
             requests:
+              cpu: 450m
               memory: 280Mi
           # spring-boot automatically picks up application.yml from ./config
           workingDir: /deployments
@@ -895,8 +907,10 @@ objects:
     strategy:
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
       type: Recreate
     template:
@@ -963,8 +977,10 @@ objects:
             name: syndesis-oauthproxy-tls
           resources:
             limits:
+              cpu: 750m
               memory: 200Mi
             requests:
+              cpu: 450m
               memory: 20Mi
         serviceAccountName: syndesis-oauth-client
         volumes:
@@ -1037,8 +1053,10 @@ objects:
     strategy:
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
       type: Recreate
     template:
@@ -1315,8 +1333,10 @@ objects:
     strategy:
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
       type: Recreate
     template:
@@ -1344,8 +1364,10 @@ objects:
             image: ' '
             resources:
               limits:
+                cpu: 750m
                 memory: 256Mi
               requests:
+                cpu: 450m
                 memory: 256Mi
             ports:
               - containerPort: 8080
@@ -1548,8 +1570,10 @@ objects:
       type: Recreate
       resources:
         limits:
+          cpu: 750m
           memory: "256Mi"
         requests:
+          cpu: 450m
           memory: "20Mi"
     template:
       metadata:
@@ -1582,8 +1606,10 @@ objects:
           # Note: On OSO there is no Guaranteed class, its always burstable
           resources:
             limits:
+              cpu: 750m
               memory: ${PROMETHEUS_MEMORY_LIMIT}
             requests:
+              cpu: 450m
               memory: ${PROMETHEUS_MEMORY_LIMIT}
           volumeMounts:
           - name: syndesis-prometheus-data
