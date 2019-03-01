@@ -848,4 +848,4 @@ objects:
           enabled: true
       endpoints:
         health:
-          sensitive: false
+          sensitive: false 
